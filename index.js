@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(cors());
 const port = 5000;
 
+app.get('/', (req,res) => {
+    res.send('hello from volunteers world')
+})
+
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
@@ -36,6 +40,7 @@ client.connect(err => {
 
     })
 })
+
 
 
   app.get('/works', (req, res) => {
